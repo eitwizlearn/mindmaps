@@ -15,10 +15,20 @@ mindmaps.NewDocumentView = function() {
  * 
  * @constructor
  */
-mindmaps.NewDocumentPresenter = function(eventBus, mindmapModel, view) {
+mindmaps.NewDocumentPresenter = function (eventBus, mindmapModel, view) {
 
-  this.go = function() {
-    var doc = new mindmaps.Document();
-    mindmapModel.setDocument(doc);
-  };
+    this.go = function () {
+        //var doc = new mindmaps.Document();
+        //mindmapModel.setDocument(doc);
+
+        var projectId = $(".hidProjectId").val();
+        if (projectId != "0" && $(".hidCanvasData").val() != "") {
+            var doc = mindmaps.Document.fromJSON($(".hidCanvasData").val());
+            mindmapModel.setDocument(doc);
+        }
+        else {
+            var doc = new mindmaps.Document();
+            mindmapModel.setDocument(doc);
+        }
+    };
 };
