@@ -281,16 +281,52 @@ mindmaps.ToolBarPresenter = function(eventBus, commandRegistry, view,
 
   // file menu
   var fileMenu = new mindmaps.ToolBarMenu("Mind map", "ui-icon-document");
-  var fileCommands = [ mindmaps.NewDocumentCommand,
-      mindmaps.OpenDocumentCommand, mindmaps.SaveDocumentCommand,
-      mindmaps.ExportCommand, mindmaps.PrintCommand,
-      mindmaps.CloseDocumentCommand ];
+  
+  ////Original with full commands
+  //  var fileCommands = [ mindmaps.NewDocumentCommand,
+  //      mindmaps.OpenDocumentCommand, mindmaps.SaveDocumentCommand,
+  //      mindmaps.ExportCommand, mindmaps.PrintCommand,
+  //      mindmaps.CloseDocumentCommand ];
+
+  ////Eric editted version 1
+//  var fileCommands = [mindmaps.SaveDocumentCommand
+//                    ,mindmaps.SubmitDocumentCommand
+//                    , mindmaps.ExportCommand
+//                    , mindmaps.PrintCommand];
+  
+  //////Eric editted version 2
+  //var fileCommands = [mindmaps.SaveDocumentCommand
+  //                  , mindmaps.SaveReleaseDocumentCommand
+  //                  , mindmaps.SubmitDocumentCommand
+  //                  , mindmaps.SubmitReleaseDocumentCommand
+  //                  , mindmaps.ExportCommand
+  //                  , mindmaps.PrintCommand];
+
+  //  ////Eric editted version 3
+  //var fileCommands = [mindmaps.RefreshDocumentCommand
+  //                  , mindmaps.SaveDocumentCommand
+  //                  , mindmaps.SaveReleaseDocumentCommand
+  //                  , mindmaps.SubmitDocumentCommand
+  //                  , mindmaps.SubmitReleaseDocumentCommand
+  //                  , mindmaps.ExportCommand
+  //                  , mindmaps.PrintCommand];
+
+    ////Eric editted version 4
+  var fileCommands = [mindmaps.RefreshDocumentCommand
+                    , mindmaps.SaveDocumentCommand
+                    , mindmaps.SaveReleaseDocumentCommand
+                    , mindmaps.SubmitDocumentCommand
+                    , mindmaps.SubmitReleaseDocumentCommand
+                    , mindmaps.ExportCommand
+                    , mindmaps.ExportSaveCommand
+                    , mindmaps.PrintCommand];
+
   var fileButtons = commandsToButtons(fileCommands);
   fileMenu.add(fileButtons);
   view.addMenu(fileMenu);
 
-  // help button
-  view.addButton(commandToButton(mindmaps.HelpCommand), view.alignRight);
+  //// help button
+  //view.addButton(commandToButton(mindmaps.HelpCommand), view.alignRight);
 
   this.go = function() {
     view.init();
