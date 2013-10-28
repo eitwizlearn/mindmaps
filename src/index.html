@@ -272,7 +272,11 @@
   <script src="js/MindMapModel.js"></script>
   <script src="js/NewDocument.js"></script>
   <script src="js/OpenDocument.js"></script>
+  <script src="/js/RefreshDocument.js"></script>
   <script src="js/SaveDocument.js"></script>
+  <script src="js/SaveReleaseDocument.js"></script>
+  <script src="js/SubmitDocument.js"></script>
+  <script src="js/SubmitReleaseDocument.js"></script>
   <script src="js/MainViewController.js"></script>
   <script src="js/Storage.js"></script>
   <script src="js/Event.js"></script>
@@ -284,22 +288,88 @@
   <script src="js/FilePicker.js"></script>
   <!-- JS:LIB:END -->
 
-  <!-- PRODUCTION
-<script type="text/javascript">
-  var _gaq = _gaq || [];
-  _gaq.push([ '_setAccount', 'UA-23624804-1' ]);
-  _gaq.push([ '_trackPageview' ]);
-  (function() {
-    var ga = document.createElement('script');
-    ga.type = 'text/javascript';
-    ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl'
-        : 'http://www')
-        + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(ga, s);
-  })();
-</script>
-/PRODUCTION -->
+    <script type="text/javascript">
+        function RefreshMindMap() {
+            window.location.reload();
+        }
+
+        //------------------------------------------------------------------------------------------------------------------------------------
+        //SAVE MIND MAP IMAGE
+        //------------------------------------------------------------------------------------------------------------------------------------
+        function SaveMindMapImage(imgdata) {
+            
+            //You can save the image data into your physical folder via a ajax webservice here
+            
+        }
+
+        //------------------------------------------------------------------------------------------------------------------------------------
+        //SAVE MIND MAP BASED ON WHICH TYPE (STUDENT SAVE OR TEACHER SAVE)
+        //------------------------------------------------------------------------------------------------------------------------------------
+        function SaveMindMap(mapData,releasemode) {
+            
+            //You can determine from here whether to call teacher or student method
+            //SaveMindMapTeacher
+            //SaveMindMapStudent
+        }
+
+        //------------------------------------------------------------------------------------------------------------------------------------
+        //SAVE MIND MAP PROJECT FOR TEACHER
+        //------------------------------------------------------------------------------------------------------------------------------------
+        function SaveMindMapTeacher(mapData, releasemode) {
+            
+            //Save the mindmap data meant for teachers
+            
+        }
+
+        //------------------------------------------------------------------------------------------------------------------------------------
+        //SAVE MIND MAP PROJECT FOR STUDENT SUBMISSION
+        //------------------------------------------------------------------------------------------------------------------------------------
+        function SaveMindMapStudent(mapData, releasemode) {
+            
+            //Save the mindmap data meant for students
+            
+        }
+
+        //------------------------------------------------------------------------------------------------------------------------------------
+        //SUBMIT MIND MAP
+        //------------------------------------------------------------------------------------------------------------------------------------
+        function SubmitMindMap(mapData, releasemode) {
+            
+            //Submit the mindmap rawdata for submission
+        }
+        
+        //------------------------------------------------------------------------------------------------------------------------------------
+        //DOCUMENT READY
+        //------------------------------------------------------------------------------------------------------------------------------------
+        $(document).ready(function () {
+
+            //If it is a teacher, you can choose the hide the submit and export buttons
+
+            //IF AUTHOR OR EDITOR, HIDE THE SUBMISSION BUTTON
+            /*
+            if (permissionVal == "30" || permissionVal == "135") {
+                $("#button-SUBMIT_DOCUMENT_COMMAND").hide();
+                $("#button-SUBMIT_RELEASE_DOCUMENT_COMMAND").hide();
+                $("#button-SUBMIT_REFRESH_DOCUMENT_COMMAND").hide();
+                $("#button-EXPORT_SAVE_COMMAND").hide();
+                $("#button-HELP_COMMAND").hide();
+            }
+            */
+
+        });
+    </script>    
+  
+    <input id="hidProjectId" class="hidProjectId" type="hidden" value="0" />
+    <input id="hidProjectType" class="hidProjectType" type="hidden" value="" />
+    <input id="hidRevision" class="hidRevision" type="hidden" value="0" />
+    <input id="hidPermission" class="hidPermission" type="hidden" value="0" />
+    <input id="hidPermissionId" class="hidPermissionId" type="hidden" value="0" />
+    <input id="hidSubmissionId" class="hidSubmissionId" type="hidden" value="" />
+    <input id="hidGroupId" class="hidGroupId" type="hidden" value="0" />
+    <input id="hidMode" class="hidMode" type="hidden" value="" />
+    <input id="hidLock" class="hidLock" type="hidden" value="" />
+    <input id="hidLockBy" class="hidLockBy" type="hidden"  value="" />
+
+    <input id="hidCanvasData" class="hidCanvasData" type="hidden" value='' />
 </body>
 </html>
