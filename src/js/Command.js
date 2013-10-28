@@ -282,6 +282,16 @@ mindmaps.OpenDocumentCommand.prototype = new mindmaps.Command();
  * @constructor
  * @augments mindmaps.Command
  */
+
+mindmaps.RefreshDocumentCommand = function () {
+    this.id = "REFRESH_DOCUMENT_COMMAND";
+    this.label = "Refresh";
+    this.shortcut = ["ctrl+h", "meta+h"];
+    this.icon = "ui-icon-gear";
+    this.description = "Refresh the mind map";
+};
+mindmaps.RefreshDocumentCommand.prototype = new mindmaps.Command();
+
 mindmaps.SaveDocumentCommand = function() {
   this.id = "SAVE_DOCUMENT_COMMAND";
   this.label = "Save...";
@@ -290,6 +300,31 @@ mindmaps.SaveDocumentCommand = function() {
   this.description = "Save the mind map";
 };
 mindmaps.SaveDocumentCommand.prototype = new mindmaps.Command();
+
+mindmaps.SaveReleaseDocumentCommand = function () {
+    this.id = "SAVE_RELEASE_DOCUMENT_COMMAND";
+    this.label = "Save and Release...";
+    this.shortcut = ["ctrl+r", "meta+r"];
+    this.icon = "ui-icon-disk";
+    this.description = "Save and release the mind map";
+};
+mindmaps.SaveReleaseDocumentCommand.prototype = new mindmaps.Command();
+
+mindmaps.SubmitDocumentCommand = function () {
+    this.id = "SUBMIT_DOCUMENT_COMMAND";
+    this.label = "Submit";
+    this.icon = "ui-icon-disk";
+    this.description = "Submit the mind map";
+};
+mindmaps.SubmitDocumentCommand.prototype = new mindmaps.Command();
+
+mindmaps.SubmitReleaseDocumentCommand = function () {
+    this.id = "SUBMIT_RELEASE_DOCUMENT_COMMAND";
+    this.label = "Submit and Release";
+    this.icon = "ui-icon-disk";
+    this.description = "Submit and release the mind map";
+};
+mindmaps.SubmitReleaseDocumentCommand.prototype = new mindmaps.Command();
 
 /**
  * Creates a new CloseDocumentCommand.
@@ -349,3 +384,13 @@ mindmaps.ExportCommand = function() {
   this.description = "Export the mind map";
 };
 mindmaps.ExportCommand.prototype = new mindmaps.Command();
+
+
+
+mindmaps.ExportSaveCommand = function () {
+    this.id = "EXPORT_SAVE_COMMAND";
+    this.icon = "ui-icon-image";
+    this.label = "Save Image";
+    this.description = "Save mind map image";
+};
+mindmaps.ExportSaveCommand.prototype = new mindmaps.Command();
